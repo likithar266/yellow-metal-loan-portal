@@ -1,4 +1,4 @@
-﻿# Yellow Metal - Full-Stack Developer Intern Assignment
+﻿# Yellow Metal - A Web-Based Gold Loan Application & Data Collection Portal
 
 ## Getting Started
 
