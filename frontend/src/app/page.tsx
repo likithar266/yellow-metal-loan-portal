@@ -1,8 +1,9 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CaretRight, Info, CheckCircle } from "@phosphor-icons/react";
+import LiquidGoldBackground from "@/components/LiquidGoldBackground";
 
 const YellowMetalLogo = ({ className = "w-8 h-8" }) => (
       <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -116,9 +117,10 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-[100dvh] flex flex-col md:flex-row relative overflow-hidden bg-[#09090b]">
+    <main className="min-h-[100dvh] flex flex-col md:flex-row relative overflow-hidden bg-transparent">
+      <LiquidGoldBackground />
       {/* Left Branding Panel */}
-      <div className="w-full md:w-5/12 lg:w-1/3 border-r border-zinc-800 p-8 md:p-12 flex flex-col justify-between relative z-10 overflow-hidden bg-zinc-900">
+      <div className="w-full md:w-5/12 lg:w-1/3 border-r border-zinc-800 p-8 md:p-12 flex flex-col justify-between relative z-10 overflow-hidden bg-zinc-950/40 backdrop-blur-3xl shadow-2xl">
         {/* Subtle decorative background elements */}
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,_rgba(234,179,8,0.08)_0%,_transparent_50%)] pointer-events-none" />
         <YellowMetalLogo className="absolute -bottom-24 -left-24 w-96 h-96 opacity-[0.03] pointer-events-none rotate-12" />
@@ -204,7 +206,7 @@ export default function Home() {
                       <label className="text-sm font-medium text-zinc-300">Full Name</label>
                       <input
                         type="text"
-                        className="w-full bg-zinc-900 border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors"
+                        className="w-full bg-zinc-950/40 backdrop-blur-3xl shadow-2xl border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors"
                         value={formData.customerName}
                         onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
                         placeholder="Rahul Sharma"
@@ -215,7 +217,7 @@ export default function Home() {
                       <input
                         type="tel"
                         maxLength={10}
-                        className="w-full bg-zinc-900 border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors"
+                        className="w-full bg-zinc-950/40 backdrop-blur-3xl shadow-2xl border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors"
                         value={formData.mobileNumber}
                         onChange={(e) => setFormData({ ...formData, mobileNumber: e.target.value })}
                         placeholder="9876543210"
@@ -228,7 +230,7 @@ export default function Home() {
                       <label className="text-sm font-medium text-zinc-300">Gross Wt (g)</label>
                       <input
                         type="number"
-                        className="w-full bg-zinc-900 border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors"
+                        className="w-full bg-zinc-950/40 backdrop-blur-3xl shadow-2xl border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors"
                         value={formData.grossWeightGrams}
                         onChange={(e) => setFormData({ ...formData, grossWeightGrams: e.target.value })}
                         placeholder="50"
@@ -238,7 +240,7 @@ export default function Home() {
                       <label className="text-sm font-medium text-zinc-300">Net Wt (g)</label>
                       <input
                         type="number"
-                        className="w-full bg-zinc-900 border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors"
+                        className="w-full bg-zinc-950/40 backdrop-blur-3xl shadow-2xl border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors"
                         value={formData.netWeightGrams}
                         onChange={(e) => setFormData({ ...formData, netWeightGrams: e.target.value })}
                         placeholder="45"
@@ -247,7 +249,7 @@ export default function Home() {
                     <div className="space-y-1.5">
                       <label className="text-sm font-medium text-zinc-300">Purity</label>
                       <select
-                        className="w-full bg-zinc-900 border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors appearance-none"
+                        className="w-full bg-zinc-950/40 backdrop-blur-3xl shadow-2xl border border-zinc-800 rounded-md px-4 py-2.5 text-zinc-100 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand/50 transition-colors appearance-none"
                         value={formData.purityKarat}
                         onChange={(e) => setFormData({ ...formData, purityKarat: Number(e.target.value) })}
                       >
@@ -294,7 +296,7 @@ export default function Home() {
                       ₹{Math.floor(eligibleLoan).toLocaleString()}
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-zinc-400 bg-zinc-900 px-4 py-2 rounded-full border border-zinc-800">
+                  <div className="flex items-center gap-2 text-sm text-zinc-400 bg-zinc-950/40 backdrop-blur-3xl shadow-2xl px-4 py-2 rounded-full border border-zinc-800">
                     <Info weight="bold" /> 75% LTV Applied
                   </div>
                 </div>
@@ -306,7 +308,7 @@ export default function Home() {
                       className={`relative flex cursor-pointer rounded-xl border p-5 focus:outline-none transition-all ${
                         formData.selectedPlanId === plan.id
                           ? "border-brand bg-brand/5 ring-1 ring-brand/50"
-                          : "border-zinc-800 bg-zinc-900/50 hover:bg-zinc-900 hover:border-zinc-700"
+                          : "border-zinc-800 bg-zinc-950/40 backdrop-blur-3xl shadow-2xl/50 hover:bg-zinc-950/40 backdrop-blur-3xl shadow-2xl hover:border-zinc-700"
                       }`}
                     >
                       <input
@@ -335,7 +337,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <button
                     onClick={() => setStep(1)}
-                    className="w-1/3 bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-zinc-300 font-medium py-3 rounded-md transition-colors"
+                    className="w-1/3 bg-zinc-950/40 backdrop-blur-3xl shadow-2xl border border-zinc-800 hover:bg-zinc-800 text-zinc-300 font-medium py-3 rounded-md transition-colors"
                   >
                     Back
                   </button>
@@ -365,7 +367,7 @@ export default function Home() {
                   <p className="text-zinc-400">Your preliminary gold loan application has been recorded.</p>
                 </div>
                 
-                <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 max-w-sm mx-auto text-left space-y-4">
+                <div className="bg-zinc-950/40 backdrop-blur-3xl shadow-2xl border border-zinc-800 rounded-lg p-6 max-w-sm mx-auto text-left space-y-4">
                   <div>
                     <div className="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1">Application ID</div>
                     <div className="font-mono text-zinc-300 bg-zinc-950 px-3 py-2 rounded border border-zinc-800">{successId}</div>
@@ -398,5 +400,7 @@ export default function Home() {
     </main>
   );
 }
+
+
 
 
