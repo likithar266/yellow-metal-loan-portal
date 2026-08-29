@@ -4,13 +4,12 @@ import { useState, useEffect } from "react";
 import { User, MapPin, Hash, Coin } from "@phosphor-icons/react";
 
 const YellowMetalLogo = ({ className = "w-8 h-8" }) => (
-  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <circle cx="50" cy="50" r="50" fill="#18181B" />
-    <g stroke="#EAB308" strokeWidth="8" strokeLinecap="square" strokeLinejoin="miter">
-      <path d="M 28 35 L 45 45 L 45 75" />
-      <path d="M 72 35 L 55 45 L 55 75" />
-      <path d="M 28 48 L 40 55" />
-      <path d="M 72 48 L 60 55" />
+    <g stroke="#EAB308" strokeWidth="12" strokeLinecap="square" strokeLinejoin="round">
+      <path d="M 22 30 L 50 48 L 78 30" />
+      <path d="M 22 52 L 42 65 L 42 82" />
+      <path d="M 78 52 L 58 65 L 58 82" />
     </g>
   </svg>
 );
@@ -149,3 +148,5 @@ export default function AdminDashboard() {
     </div>
   );
 }
+
+
